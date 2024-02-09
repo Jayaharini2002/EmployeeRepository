@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Employee Details";
+}
+@model List<Employee>
+
+<header>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+       
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Select">Select</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="FilterDetails">Filter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="InsertEmployeeDetails">Insert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="UpdateEmployeeDetails">Update</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="DeleteEmployeeDetails">Delete</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Logout">Logout</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+<h2>Employee List</h2>
+<table class="container">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            DeptName
+        </th>
+        <th>
+            Salary
+        </th>
+        <th>
+            IsActive
+        </th>
+        <th>
+            Date of Birth
+        </th>
+        <th>
+            Basic Pay
+        </th>
+        <th>
+            HRA Amount
+        </th>
+        <th>
+            Tax Amount
+        </th>
+        <th>
+            Allowances Pay
+        </th>
+        <th>
+            Address
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeptName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive);
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Basic);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HRA);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allowances);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address);
+            </td>
+        </tr>
+    }
+</table>
+
+
+<a href="https://localhost:7147/Employee/InsertEmployeeDetails" class="next round">&#8250;</a>
+

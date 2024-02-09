@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "DeleteEmployeeDetails";
+}
+@model ListEmployees1.Models.Employee
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Select">Select</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="FilterDetails">Filter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="InsertEmployeeDetails">Insert</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="UpdateEmployeeDetails">Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="DeleteEmployeeDetails">Delete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<hr />
+<h2>Remove Employee</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteEmployeeDetails">
+
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+            </div>
+            <br />
+            <div>
+                <input type="submit" class="button" value="Submit" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+  
+   
+    <a asp-action="Index" class="button">View Employee Details</a>
+</div>
+<br />
+<a href="https://localhost:7147/Employee/UpdateEmployeeDetails" class="previous round">&#8249;</a>
+
