@@ -10,6 +10,6 @@
 <br/>
 **4.Delete**
 <br/>
-<div style="width:60px ; height:60px">
-<img src="C:\Users\jayaharinis\OneDrive - inteleants.com\Pictures\Screenshots" style=" width:60px ; height:60px " >
-<div>
+
+<img src="C:/Users/jayaharinis/OneDrive - inteleants.com/Pictures/Screenshots/login.png" style=" width:60px ; height:60px " >
+
