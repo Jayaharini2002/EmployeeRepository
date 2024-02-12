@@ -4,42 +4,42 @@ Employee Attributes
 <br />
 1.Employee Id
 <br />
-**2.Name**
+2.Name
 <br />
-**3.Department Name**
+3.Department Name
 <br />
-**4.Salary**
+4.Salary
 <br />
-**5.IsActive**
+5.IsActive
 <br />
-**6.Date Of Birth**
+6.Date Of Birth
 <br />
-**7.Basic Pay**
+7.Basic Pay
 <br />
-**8.HRA Pay**
+8.HRA Pay
 <br />
-**9.Tax Amount**
+9.Tax Amount
 <br />
-**10.Allowances Cost**
+10.Allowances Cost
 <br />
-**11.Address**
+11.Address
 <br>
 *Here we have performed four operations*
 <br>
 <br>
-**1.Select**
+1.Select
 <br>
-**2.Insert**
+2.Insert
 <br>
-**3.Update** 
+3.Update
+<br >
+4.Delete
 <br>
-**4.Delete**
-<br>
-**Login Page**
-<br>
+### Login Page
+<br >
 <img src="Pictures\login.png" style=" width:500px ; height:500px " >
 <br>
-**Invalid Page**
+### Invalid Page
 <br>
 <img src="Pictures\failed login.png" style=" width:500px ; height:500px">
 <br>
