@@ -1,5 +1,4 @@
- Employee Repository
-
+Employee Repository
 *Here we have performed four operations*
 <br/>
 **1.Select**
@@ -13,6 +12,7 @@
 # Login Page
 <img src="Pictures\login.png" style=" width:500px ; height:500px " >
 <img src="Pictures\login.png" style=" width:500px ; height:500px " >
+<br/>
 # Invalid Page
 <img src="Pictures\failed login.png" style=" width:500px ; height:500px " >
 # Menus Available
