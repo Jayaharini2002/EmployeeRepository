@@ -11,5 +11,5 @@
 **4.Delete**
 <br/>
 <div style="width:60px ; height:60px">
-![Login Page](/Pictures/Screenshots/login.png?raw=true "Login Page")
+<img src="C:\Users\jayaharinis\OneDrive - inteleants.com\Pictures\Screenshots" style=" width:60px ; height:60px " >
 <div>
