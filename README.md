@@ -11,5 +11,5 @@
 **4.Delete**
 <br/>
 
-<img src="C:/Users/jayaharinis/OneDrive - inteleants.com/Pictures/Screenshots/login.png" style=" width:60px ; height:60px " >
+<img src="C:\Users\jayaharinis\OneDrive - inteleants.com\Pictures\Screenshots\login.png" style=" width:60px ; height:60px " >
 
