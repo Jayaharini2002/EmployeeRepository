@@ -24,8 +24,7 @@ Employee Attributes
 <br />
 11.Address
 <br>
-*Here we have performed four operations*
-<br>
+Here we have performed four operations
 <br>
 1.Select
 <br>
@@ -34,6 +33,7 @@ Employee Attributes
 3.Update
 <br >
 4.Delete
+<br>
 <br>
 Login Page
 <br >
