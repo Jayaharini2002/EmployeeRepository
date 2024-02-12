@@ -2,7 +2,7 @@
 <br />
 Employee Attributes
 <br />
-**1.Employee Id**
+1.Employee Id
 <br />
 **2.Name**
 <br />
