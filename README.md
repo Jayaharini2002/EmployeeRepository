@@ -10,4 +10,6 @@
 <br/>
 **4.Delete**
 <br/>
-![Login Page](C:/Users/jayaharinis/OneDrive - inteleants.com/Pictures/Screenshots/login.png?raw=true "Login Page")
+<div style="width:60px ; height:60px">
+![Login Page](Pictures/Screenshots/login.png?raw=true "Login Page")
+<div>
