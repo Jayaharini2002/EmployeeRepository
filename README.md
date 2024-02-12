@@ -1,12 +1,12 @@
-#Employee Repository
+# Employee Repository
 
 *Here we have performed four operations*
 <br/>
-**Select**
+**1.Select**
 <br/>
-**Insert**
+**2.Insert**
 <br/>
-**Update** 
+**3.Update** 
 <br/>
-**Delete**
+**4.Delete**
 <br/>
