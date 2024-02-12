@@ -10,4 +10,4 @@
 <br/>
 **4.Delete**
 <br/>
-![Login Page](C:\Users\jayaharinis\OneDrive - inteleants.com\Pictures\Screenshots\login.png?raw=true "Login Page")
+![Login Page](C:/Users/jayaharinis/OneDrive - inteleants.com/Pictures/Screenshots/login.png?raw=true "Login Page")
