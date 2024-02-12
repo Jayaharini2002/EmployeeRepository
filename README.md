@@ -35,51 +35,51 @@ Employee Attributes
 <br >
 4.Delete
 <br>
-### Login Page
+Login Page
 <br >
 <img src="Pictures\login.png" style=" width:500px ; height:500px " >
 <br>
-### Invalid Page
+Invalid Page
 <br>
 <img src="Pictures\failed login.png" style=" width:500px ; height:500px">
 <br>
-**Menus Available**
+Menus Available
 <br>
 <img src="Pictures\menu.png" style=" width:500px ; height:500px " >
 <br>
-**Table with Route Command**
+Table with Route Command
 <br>
 <img src="Pictures\table.png" style=" width:500px ; height:500px " >
 <br>
-**Table with Mobile View using Media Query**
+Table with Mobile View using Media Query
 <br>
 <img src="Pictures\mobile view.png" style=" width:500px ; height:500px " >
 <br>
-**Insert Page**
+Insert Page
 <br>
 <img src="Pictures\insert.png" style=" width:500px ; height:500px ">
 <br>
-**Required Page**
+Required Page
 <br>
 <img src="Pictures\required.png" style=" width:500px ; height:500px ">
 <br>
-**Validating the Attribute**
+Validating the Attribute
 <br>
 <img src="Pictures\validate.png" style=" width:500px ; height:500px ">
 <br>
-**Update Page**
+Update Page
 <br>
 <img src="Pictures\update.png" style=" width:500px ; height:500px ">
 <br>
-**Filter Page**
+Filter Page
 <br>
 <img src="Pictures\filter.png" style=" width:500px ; height:500px ">
 <br>
-**Remove Page**
+Remove Page
 <br>
 <img src="Pictures\remove.png" style=" width:500px ; height:500px ">
 <br>
-**Logout Page**
+Logout Page
 <br>
 <img src="Pictures\logout.png" style=" width:500px ; height:500px ">
 <br>
