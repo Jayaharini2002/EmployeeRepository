@@ -11,5 +11,5 @@
 **4.Delete**
 <br/>
 
-<img src="Pictures\Screenshots\login.png" style=" width:60px ; height:60px " >
+<img src="Pictures\login.png" style=" width:60px ; height:60px " >
 
