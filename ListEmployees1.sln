@@ -5,6 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListEmployees1", "ListEmployees1.csproj", "{B1A4AAB4-879E-4B67-8ED9-CF842771FE31}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33142A74-ED4F-4B26-9C39-C1193B2D73B0}"
+	ProjectSection(SolutionItems) = preProject
+		Log4netExtensions.cs = Log4netExtensions.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

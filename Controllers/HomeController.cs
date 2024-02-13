@@ -1,6 +1,7 @@
 
 using Dapper;
 using ListEmployees1.Models;
+using log4net;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -14,13 +15,26 @@ namespace ListEmployees1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
+        private readonly ILog _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILog logger)
         {
             _logger = logger;
+            _logger.Info("This is an informational log.");
+            _logger.Error("This is an error log.");
+            
         }
-        public void OnGet()
+        /*_logger = logger;
+        }*/
+        /*[HttpGet]
+        public IActionResult Get()
+        {
+            _logger.Info("This is an informational log.");
+            _logger.Error("This is an error log.");
+            return Ok("Test success!");
+        }*/
+      /*  public void OnGet()
         {
             try
             {
@@ -31,7 +45,7 @@ namespace ListEmployees1.Controllers
                 _logger.LogError(message: ex.Message, ex);
                 throw;
             }
-        }
+        }*/
         public IActionResult Privacy()
         {
             return View();
@@ -47,6 +61,7 @@ namespace ListEmployees1.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            
             return View();
         }
 
