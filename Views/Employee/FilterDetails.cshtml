@@ -35,10 +35,13 @@
 </header>
 <body>
     <h2>Filter Employee Details</h2>
-    <div class="row">
-        <div class="col-md-4">
-            
-            <form asp-action="FilterDetails">
+    <div class="container mt-5 ">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center" style="width: 15rem; height:10rem;">
+                    <div class="card-body">
+
+                        <form asp-action="FilterDetails" id="registrationForm">
 
                 <div class="form-group">
                     <label asp-for="Id" class="control-label"></label>
@@ -47,7 +50,7 @@
                 </div>
                 <br />
                 <div>
-                    <input type="submit" class="button" value="Submit" />
+                    <input type="submit" class="btn btn-secondary" value="Submit" />
                 </div>
             </form>
 
@@ -73,5 +76,8 @@
             <a asp-action="UpdateEmployeeDetails" class="next round">&#8250;</a>
             </div>
             </div>
+            </div>
+        </div>
+        </div>
 </body>
 

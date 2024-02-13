@@ -1,8 +1,11 @@
 ﻿@model ListEmployees1.Models.Login;
 <h2>Logout</h2>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-controller="Home" asp-action="Index" method="post">
+<div class="container mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center" style="width: 15rem; height:10rem;">
+                <div class="card-body">
+                    <form asp-controller="Home" asp-action="Index" method="post" id="registrationForm">
 
             <div class="form-group">
                 <label asp-for="username" class="control-label">Do You Want Logout</label>
@@ -12,11 +15,14 @@
 
 
             @Html.ValidationMessageFor(m => m.username, " ", new { @class = "text-danger" })
-            <br />
+         
             <h6>@ViewBag.ErrorMessage</h6>
             <div>
-                <input type="submit" class="button" value="Logout" />
+                            <input type="submit" class="btn btn-secondary" value="Logout" />
             </div>
         </form>
+    </div>
+</div>
+        </div>
     </div>
 </div>

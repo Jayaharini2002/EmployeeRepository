@@ -34,10 +34,13 @@
 </header>
 <hr />
 <h2>Remove Employee</h2>
-<div class="row">
-    <div class="col-md-4">
-        
-        <form asp-action="DeleteEmployeeDetails">
+<div class="container mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center" style="width: 15rem; height:10rem;">
+                <div class="card-body">
+
+                    <form asp-action="DeleteEmployeeDetails" id="registrationForm">
 
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
@@ -46,16 +49,19 @@
             </div>
             <br />
             <div>
-                <input type="submit" class="button" value="Submit" />
+                            <input type="submit" class="btn btn-secondary" value="Submit" />
             </div>
         </form>
+    </div>
+</div>
+        </div>
     </div>
 </div>
 <br />
 <div>
 
 
-    <a asp-action="Select" class="button">View Employee Details</a>
+    <a asp-action="Select" class="btn btn-secondary">View Employee Details</a>
 </div>
 <br />
 <a asp-action="UpdateEmployeeDetails" class="previous round">&#8249;</a>
