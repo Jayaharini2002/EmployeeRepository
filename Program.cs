@@ -37,6 +37,7 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        app.UseSerilogRequestLogging();
 
         app.UseRouting();
 
