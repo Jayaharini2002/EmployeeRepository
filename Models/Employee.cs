@@ -5,7 +5,7 @@ namespace ListEmployees1.Models
     {
         [Required]
         [Key]
-        [Range(1,100)]
+        [Range(1, 100)]
         public int Id { get; set; }
         [Required]
         [StringLength(100)]
@@ -14,14 +14,15 @@ namespace ListEmployees1.Models
         [StringLength(100)]
         public string DeptName { get; set; }
 
-        public decimal Salary {  get; set; }
-        public bool IsActive {  get; set; }
+        public decimal Salary { get; set; }
+        public bool IsActive { get; set; }
         public DateTime dob { get; set; }
-        public decimal Basic {  get; set; }
-        public decimal HRA {  get; set; }
-        public decimal Tax {  get; set; }
-        public decimal Allowances {  get; set; }
+        public decimal Basic { get; set; }
+        public decimal HRA { get; set; }
+        public decimal Tax { get; set; }
+        public decimal Allowances { get; set; }
         [Required]
-        public string Address {  get; set; }
+        public string Address { get; set; }
     }
 }
+
