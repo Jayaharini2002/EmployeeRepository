@@ -6,24 +6,24 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <div asp-validation-summary="All"></div>
         <form asp-action="Index">
-            
+
             <div class="form-group">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <i class="glyphicon glyphicon-user"></i>
                 <label asp-for="username" class="control-label">User Name</label>
                 <input asp-for="username" placeholder="Username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <i class="glyphicon glyphicon-lock"></i>
-                 <label asp-for="passwd" class="control-label">Password</label>
-                 <br />
-               
-                <input asp-for="passwd" placeholder="Password" type="password" class="form-control"/>
-                @* <input type="password" class="control-label" id="pwd" name="pwd" minlength="3"><br><br> *@
-          
-                @* <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"> *@
+                <label asp-for="passwd" class="control-label">Password</label>
+                <br />
+
+                <input asp-for="passwd" placeholder="Password" type="password" class="form-control" />
+                <span asp-validation-for="passwd" class="text-danger"></span>
             </div>
             <br />
             <div>

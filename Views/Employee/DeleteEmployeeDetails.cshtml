@@ -36,11 +36,13 @@
 <h2>Remove Employee</h2>
 <div class="row">
     <div class="col-md-4">
+        
         <form asp-action="DeleteEmployeeDetails">
 
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <br />
             <div>
@@ -51,10 +53,10 @@
 </div>
 <br />
 <div>
-  
-   
-    <a asp-action="Index" class="button">View Employee Details</a>
+
+
+    <a asp-action="Select" class="button">View Employee Details</a>
 </div>
 <br />
-<a href="https://localhost:7147/Employee/UpdateEmployeeDetails" class="previous round">&#8249;</a>
+<a asp-action="UpdateEmployeeDetails" class="previous round">&#8249;</a>
 

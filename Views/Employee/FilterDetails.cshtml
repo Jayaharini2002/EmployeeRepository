@@ -34,36 +34,44 @@
     </nav>
 </header>
 <body>
-<h2>Filter Employee Details</h2>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="FilterDetails" >
+    <h2>Filter Employee Details</h2>
+    <div class="row">
+        <div class="col-md-4">
             
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-            </div> 
+            <form asp-action="FilterDetails">
+
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                <br />
+                <div>
+                    <input type="submit" class="button" value="Submit" />
+                </div>
+            </form>
+
             <br />
-            <div>
-                <input type="submit" class="button" value="Submit" />
+            <h4>
+                Employee Information
+            </h4>
+            <p>
+                <div> Id:@ViewBag.Id</div>
+
+
+                <div>Name:@ViewBag.Name</div>
+
+                <div>DepartmentName:@ViewBag.DeptName</div>
+                <div>Data of Birth:@ViewBag.dob </div>
+                <div>Address:@ViewBag.Address</div>
+            </p>
+
+
+            <br />
+
+            <a asp-action="InsertEmployeeDetails" class="previous round">&#8249;</a>
+            <a asp-action="UpdateEmployeeDetails" class="next round">&#8250;</a>
             </div>
-        </form>
-            
-<br />
-<h4>
-    Employee Information</h4>
-           <p> <div> Id:@ViewBag.Id</div>
-           
-
-            <div>Name:@ViewBag.Name</div>
-
-            <div>DepartmentName:@ViewBag.DeptName</div>
-            <div>Data of Birth:@ViewBag.dob </div>
-            <div>Address:@ViewBag.Address</div></p>
-    
-
-<br />
-        
-        <a href="https://localhost:7147/Employee/InsertEmployeeDetails" class="previous round">&#8249;</a>
-        <a href="https://localhost:7147/Employee/UpdateEmployeeDetails" class="next round">&#8250;</a>
+            </div>
 </body>
+

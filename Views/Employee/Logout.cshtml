@@ -3,20 +3,20 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-controller="Home" asp-action="Index" method="post">
-            
+
             <div class="form-group">
                 <label asp-for="username" class="control-label">Do You Want Logout</label>
-                <input asp-for="username"   class="form-control" />
+                <input asp-for="username" class="form-control" />
             </div>
             <br />
-            
 
-    @Html.ValidationMessageFor(m => m.username, " ", new { @class = "text-danger" })
-    <br />
-    <h6>@ViewBag.ErrorMessage</h6>
-    <div>
-         <input type="submit" class="button" value="Logout" />
+
+            @Html.ValidationMessageFor(m => m.username, " ", new { @class = "text-danger" })
+            <br />
+            <h6>@ViewBag.ErrorMessage</h6>
+            <div>
+                <input type="submit" class="button" value="Logout" />
+            </div>
+        </form>
     </div>
-</form>
-</div>
 </div>
