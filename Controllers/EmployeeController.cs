@@ -1,23 +1,22 @@
-﻿using ListEmployees1.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Data.SqlClient;
-using Dapper;
-using System.Data;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.OutputCaching;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Dapper;
+using ListEmployees1.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
+using System.Data;
+using System.Data.SqlClient;
 namespace ListEmployees1.Controllers
 {
-  
+    
     public class EmployeeController : Controller
     {
-        
+
         string connectionString = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=interns;password=test;Connection Timeout=10";
         string query1 = @"SELECT * FROM EmployeeList";
         string query2 = "INSERT INTO EmployeeList(Name, DeptName,Salary,IsActive,dob,Basic,HRA,Tax,Allowances,Address) VALUES ( @Name, @DeptName,@Salary,@IsActive,@dob,@Basic,@HRA,@Tax,@Allowances,@Address)";
         [AllowAnonymous]
-        [OutputCache(Duration = 100)]
         [ResponseCache(Duration = 100)]
         [Route("All")]
         [HttpGet]
@@ -83,7 +82,7 @@ namespace ListEmployees1.Controllers
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
 
-                connection.Execute(query2, new { Name = name, DeptName = dname,Salary=salary,IsActive=active,dob=dob1,Basic=basic,HRA=hra,Tax=tax,Allowances=allowances,Address=address });
+                connection.Execute(query2, new { Name = name, DeptName = dname, Salary = salary, IsActive = active, dob = dob1, Basic = basic, HRA = hra, Tax = tax, Allowances = allowances, Address = address });
 
                 return View();
             }

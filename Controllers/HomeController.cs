@@ -1,13 +1,14 @@
+
+using Dapper;
 using ListEmployees1.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
-using System.Diagnostics;
 using System.Data.SqlClient;
-using Dapper;
-using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
 
 namespace ListEmployees1.Controllers
 {
@@ -19,9 +20,18 @@ namespace ListEmployees1.Controllers
         {
             _logger = logger;
         }
-
-        
-
+        public void OnGet()
+        {
+            try
+            {
+                _logger.LogInformation("Test log");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(message: ex.Message, ex);
+                throw;
+            }
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -58,7 +68,7 @@ namespace ListEmployees1.Controllers
                         {
                             new Claim(ClaimTypes.Name,change.username)
                         };
-                        var claimsIdentity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         var authProperties = new AuthenticationProperties
                         {
 
@@ -70,9 +80,9 @@ namespace ListEmployees1.Controllers
                     else
                     {
                         string message = "Invalid Credential";
-                        ViewData["message"]=message;
+                        ViewData["message"] = message;
                         return View();
-                        
+
                     }
                 }
             }
