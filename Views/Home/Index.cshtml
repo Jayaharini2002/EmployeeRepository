@@ -2,22 +2,26 @@
 @{
     ViewData["Title"] = "Login";
 }
- <h4>Login Credentials</h4>
-<hr />
 
-<div class="container mt-5 ">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card text-center" style="width: 38rem;">
-                <div class="card-body">
+
+<section class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-area login-form">
+                    <div class="form-content">
+                        <h2>Login</h2>
+                        <h3>Login to the Website to know about Employee and Perform Various operations like View, Insert,Update and  Remove Employee</h3>
+                    </div>
                     <div asp-validation-summary="All"></div>
 
-                    <form asp-action="Index" id="registrationForm" >
-       
-            <div class="form-group">
+                    <form asp-action="Index"  >
+                        <div class="form-input">
+                            <h2>Login Form</h2>
+                             <div class="form-group">
                             
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <i class="glyphicon glyphicon-user"></i>
+                            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                            <i class="glyphicon glyphicon-user"></i>
                 <label asp-for="username" class="control-label">User Name</label>
                 <input asp-for="username" placeholder="Username" class="form-control" />
                 <span asp-validation-for="username" class="text-danger"></span>
@@ -27,24 +31,25 @@
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <i class="glyphicon glyphicon-lock"></i>
                 <label asp-for="passwd" class="control-label">Password</label>
-                <br />
 
                 <input asp-for="passwd" placeholder="Password" type="password" class="form-control" />
                 <span asp-validation-for="passwd" class="text-danger"></span>
             </div>
-            <br />
-                       
-            <div>
-                 <input type="submit" class="btn btn-secondary" value="Login" />
+
+                            <div>
+                                <input type="submit" class="btn btn-secondary" value="Submit" />
+                            </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    
-        @{
-            @ViewData["message"]
-        }
         </div>
     </div>
     </div>
     </div>
-</div>
+</section>
 
+    
+        @{
+            @ViewData["message"]
+        }
+        

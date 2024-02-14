@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OutputCaching;
 using System.Data;
 using System.Data.SqlClient;
 namespace ListEmployees1.Controllers
@@ -39,7 +38,7 @@ namespace ListEmployees1.Controllers
         [HttpPost]
         [Authorize]
         [Route("Employee/FilterDetails/employee")]
-        public IActionResult FilterDetails(Employee employee)
+        public IActionResult FilterDetails(DeleteEmployee employee)
         {
             int id = Convert.ToInt32(employee.Id);
             string connectionString = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=interns;password=test;Connection Timeout=10";
@@ -83,7 +82,7 @@ namespace ListEmployees1.Controllers
             {
 
                 connection.Execute(query2, new { Name = name, DeptName = dname, Salary = salary, IsActive = active, dob = dob1, Basic = basic, HRA = hra, Tax = tax, Allowances = allowances, Address = address });
-
+                ViewData["Message"] = "Employee details inserted successfully";
                 return View();
             }
         }
@@ -95,7 +94,7 @@ namespace ListEmployees1.Controllers
 
 
         [HttpPost]
-        public IActionResult UpdateEmployeeDetails(Employee employee)
+        public IActionResult UpdateEmployeeDetails(UpdateEmployee employee)
         {
             string name = employee.Name;
             string dname = employee.DeptName;
@@ -104,7 +103,7 @@ namespace ListEmployees1.Controllers
             {
 
                 connection.Execute("Update EmployeeList set DeptName=@DeptName where Name = @Name", new { Name = name, DeptName = dname });
-
+                ViewData["Message"] = "Employee details updated successfully";
                 return View();
             }
         }
@@ -116,14 +115,14 @@ namespace ListEmployees1.Controllers
 
 
         [HttpPost]
-        public IActionResult DeleteEmployeeDetails(Employee employee)
+        public IActionResult DeleteEmployeeDetails(DeleteEmployee employee)
         {
             int id = Convert.ToInt32(employee.Id);
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
 
                 connection.Execute("Delete from EmployeeList where Id = @Id", new { Id = id });
-
+                ViewData["Message"] = "Employee details deleted successfully";
                 return View();
             }
         }

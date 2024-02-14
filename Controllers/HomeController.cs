@@ -15,46 +15,22 @@ namespace ListEmployees1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-            _logger.LogDebug("Hey, this is a DEBUG message.");
-            _logger.LogInformation("Hey, this is an INFO message.");
-            _logger.LogWarning("Hey, this is a WARNING message.");
-            _logger.LogError("Hey, this is an ERROR message.");
-        }
-        /*private readonly ILog _logger;
+        private readonly ILog _logger;
 
         public HomeController(ILog logger)
         {
             _logger = logger;
-            _logger.Info("This is an informational log.");
-            _logger.Error("This is an error log.");
-            
-        }*/
-        /*_logger = logger;
-        }*/
-        /*[HttpGet]
+  
+        }
+        
+        [HttpGet]
         public IActionResult Get()
         {
             _logger.Info("This is an informational log.");
             _logger.Error("This is an error log.");
             return Ok("Test success!");
-        }*/
-        public void OnGet()
-        {
-            try
-            {
-                _logger.LogInformation("Test log");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(message: ex.Message, ex);
-                throw;
-            }
         }
+        
         public IActionResult Privacy()
         {
             return View();

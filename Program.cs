@@ -1,12 +1,24 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Serilog;
 using Microsoft.Extensions.Logging;
+using ListEmployees1;
+using Microsoft.AspNetCore.HttpLogging;
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestHeaders.Add("sec-ch-ua");
+    logging.ResponseHeaders.Add("MyResponseHeader");
+    logging.MediaTypeOptions.AddText("hello employees");
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+    logging.CombineLogs = true;
+}
+);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -36,6 +48,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseHttpLogging();
 app.UseStaticFiles();
 app.UseSerilogRequestLogging();
 
@@ -47,4 +60,17 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{Id?}");
 app.MapRazorPages();
+app.UseMiddleware<Middleware>();
+app.Use(async (context, next) =>
+{
+    context.Response.Headers["MyResponseHeader"] =
+        new string[] { "My Response Header Value" };
+
+    await next();
+});
+/*app.Run(async (context) =>
+{
+    await context.Response.WriteAsync("Hello World!");
+});
+*/
 app.Run();
