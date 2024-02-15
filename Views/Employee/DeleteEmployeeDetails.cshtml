@@ -41,7 +41,7 @@
             <div class="card text-center" style="width: 15rem; height:10rem;">
                 <div class="card-body">
 
-                    <form asp-action="DeleteEmployeeDetails" id="registrationForm">
+                    <form asp-action="DeleteEmployeeDetails"  id="registrationForm">
 
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
@@ -49,10 +49,9 @@
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <br />
-            <div>
-                            <input type="submit" class="btn btn-secondary" value="Submit" />
-            </div>
-        </form>
+            
+                        <button type="submit" class="btn btn-secondary" onclick="return confirm('Are you sure you want to Delete the Employee')">Delete</button>
+                    </form>
     </div>
 </div>
         </div>

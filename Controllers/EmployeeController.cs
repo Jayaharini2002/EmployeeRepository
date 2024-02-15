@@ -124,6 +124,7 @@ namespace ListEmployees1.Controllers
                 connection.Execute("Delete from EmployeeList where Id = @Id", new { Id = id });
                 ViewData["Message"] = "Employee details deleted successfully";
                 return View();
+                Console.WriteLine("Employee Information is Deleted");
             }
         }
         public IActionResult Index()
