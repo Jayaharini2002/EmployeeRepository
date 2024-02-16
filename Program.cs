@@ -25,7 +25,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Home/Index";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
     });
-
+builder.Services.AddAntiforgery(options => options.HeaderName = "XSRF-TOKEN");
 builder.Services.AddLog4net();
 
 builder.Services.AddAuthorization();

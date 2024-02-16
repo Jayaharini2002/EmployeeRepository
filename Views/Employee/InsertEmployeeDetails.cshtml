@@ -2,6 +2,27 @@
 @{
     ViewData["Title"] = "InsertEmployeeDetails";
 }
+@section Scripts
+{
+    <script>
+        function confirmInsert(event) {
+            event.preventDefault();
+            swal.fire({
+                title: "Are you sure?",
+                icon: "question",
+                showCancelButton: true
+            }).then(result => {
+                if (result.isConfirmed) {
+                    const registrationForm = document.getElementById('registrationForm');
+                    registrationForm.submit();
+                }
+                else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+        }
+    </script>
+}
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
@@ -43,8 +64,8 @@
             <div class="card text-center" >
                 <div class="card-body">
         <div asp-validation-summary="All"></div>
-                    <form asp-action="InsertEmployeeDetails" id="registrationForm">
-
+                    <form asp-action="InsertEmployeeDetails" id="registrationForm" onsubmit="confirmInsert(event)">
+                        @Html.AntiForgeryToken()
             <div class="form-group">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <i class="glyphicon glyphicon-user"></i>
@@ -113,7 +134,7 @@
             </div>
             <br />
             <div>
-                            <button type="submit" class="btn btn-secondary" onclick="return confirm('Are you sure you want to Insert the Employee')">Insert</button>
+                       <button type="submit" class="btn btn-secondary" >Insert</button>
             </div>
         </form>
     </div>
@@ -129,8 +150,4 @@
 <br />
 <a asp-action="Select" class="previous round">&#8249;</a>
 <a asp-action="FilterDetails" class="next round">&#8250;</a>
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+

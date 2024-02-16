@@ -1,7 +1,29 @@
 ﻿@model ListEmployees1.Models.UpdateEmployee
-
-
-
+@section Scripts
+{
+<script>
+        function confirmUpdate(event) {
+            event.preventDefault();
+            swal.fire({
+                title: "Are you sure you want to update?",
+                icon: "question",
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: "Save",
+                denyButtonText: "Don't save"
+            }).then(result => {
+                if (result.isConfirmed) {
+                    const registrationForm = document.getElementById('registrationForm');
+                    registrationForm.submit();
+                    Swal.fire("Saved with the new changes!", "", "success");
+                }
+                else if (result.isDenied) {
+                    swal.fire("Update operation not performed");
+                }
+            });
+        }
+</script>
+}
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
@@ -42,23 +64,23 @@
         <div class="col-md-6">
             <div class="card text-center" style="width: 15rem; height:20rem;">
                 <div class="card-body">
-                    <form asp-action="UpdateEmployeeDetails" id="registrationForm">
+                    <form asp-action="UpdateEmployeeDetails" id="registrationForm" onsubmit="confirmUpdate(event)">
                         
                             <h2>Update Form</h2>
                             <div class="form-group">
                                 <label asp-for="Name" class="control-label">Name</label>
-                                <input asp-for="Name" placeholder="Name" class="form-control" />
+                            <input asp-for="Name" required placeholder="Name" class="form-control" />
                                 <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
                             <br />
                             <div class="form-group">
                                 <label asp-for="DeptName" class="control-label">Department Name</label>
-                                <input asp-for="DeptName" placeholder="Department Name"  class="form-control" />
+                                <input asp-for="DeptName" required placeholder="Department Name"  class="form-control" />
                                 <span asp-validation-for="DeptName" class="text-danger"></span>
                             </div>
                         <br />
                         <div>
-                            <button type="submit" class="btn btn-secondary" onclick="return confirm('Are you sure you want to Update the Employee Department')">Update</button>
+                            <button type="submit" class="btn btn-secondary" >Update</button>
                         </div>
                         
                     </form>
@@ -67,9 +89,6 @@
         </div>
     </div>
    </div>
- 
-
-
 
 <a asp-action="InserEmployeeDetails" class="previous round">&#8249;</a>
 <a asp-action="DeleteEmployeeDetails" class="next round">&#8250;</a>
