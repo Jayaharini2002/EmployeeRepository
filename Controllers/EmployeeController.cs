@@ -8,17 +8,15 @@ using System.Data;
 using System.Data.SqlClient;
 namespace ListEmployees1.Controllers
 {
-    
+
     public class EmployeeController : Controller
     {
 
         string connectionString = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=interns;password=test;Connection Timeout=10";
         string query1 = @"SELECT * FROM EmployeeList";
         string query2 = "INSERT INTO EmployeeList(Name, DeptName,Salary,IsActive,dob,Basic,HRA,Tax,Allowances,Address) VALUES ( @Name, @DeptName,@Salary,@IsActive,@dob,@Basic,@HRA,@Tax,@Allowances,@Address)";
-        [AllowAnonymous]
         [ResponseCache(Duration = 100)]
         [Route("All")]
-        [HttpGet]
         [Authorize]
         public async Task<IActionResult> Select()
         {
@@ -36,7 +34,7 @@ namespace ListEmployees1.Controllers
             return View();
         }
         [HttpPost]
-        [Authorize]
+       
         [Route("Employee/FilterDetails/employee")]
         public IActionResult FilterDetails(DeleteEmployee employee)
         {
@@ -66,6 +64,7 @@ namespace ListEmployees1.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult InsertEmployeeDetails(Employee employee)
         {
             string name = employee.Name;

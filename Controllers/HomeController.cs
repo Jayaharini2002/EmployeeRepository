@@ -44,6 +44,7 @@ namespace ListEmployees1.Controllers
         string connectionString = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=interns;password=test;Connection Timeout=10";
         string query1 = @"SELECT username,passwd FROM LoginUser";
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             
@@ -51,7 +52,7 @@ namespace ListEmployees1.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
+       
         public async Task<IActionResult> Index(IFormCollection form)
         {
 
@@ -66,7 +67,7 @@ namespace ListEmployees1.Controllers
                     {
                         var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Name,change.username)
+                            new Claim(ClaimTypes.Name,value:change.username)
                         };
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         var authProperties = new AuthenticationProperties
@@ -81,8 +82,8 @@ namespace ListEmployees1.Controllers
                     {
                         string message = "Invalid Credential";
                         ViewData["message"] = message;
-                        return View();
-
+                        
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }

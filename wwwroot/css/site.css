@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 table, td, th {
     border: 1px solid #ddd;
     text-align: left;
@@ -203,7 +203,7 @@ body {
 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
 
 * {
     margin: 0;

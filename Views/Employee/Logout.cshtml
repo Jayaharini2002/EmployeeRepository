@@ -5,13 +5,13 @@
         <div class="col-md-6">
             <div class="card text-center" style="width: 15rem; height:10rem;">
                 <div class="card-body">
-                    <form asp-controller="Home" asp-action="Index" method="post" id="registrationForm">
+                    <form asp-controller="Employee" asp-action="Logout" method="post" id="registrationForm">
 
-            <div class="form-group">
-                <label asp-for="username" class="control-label">Do You Want Logout</label>
-                <input asp-for="username" class="form-control" />
-            </div>
-            <br />
+                    <div class="form-group">
+                        <label asp-for="username" class="control-label">Do You Want Logout</label>
+                        <input asp-for="username" class="form-control" />
+                    </div>
+                    <br />
 
 
             @Html.ValidationMessageFor(m => m.username, " ", new { @class = "text-danger" })
