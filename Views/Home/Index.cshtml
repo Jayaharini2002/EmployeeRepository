@@ -16,6 +16,7 @@
                     <div asp-validation-summary="All"></div>
 
                     <form asp-action="Index"  >
+                        @Html.AntiForgeryToken()
                         <div class="form-input">
                             <h2>Login Form</h2>
                              <div class="form-group">
@@ -47,9 +48,7 @@
     </div>
     </div>
 </section>
-
-    
-        @{
-            @ViewData["message"]
-        }
+@{
+    @ViewData["message"]
+}
         
