@@ -52,7 +52,7 @@ namespace ListEmployees1.Controllers
         }
 
         [HttpPost]
-       
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(IFormCollection form)
         {
 

@@ -8,7 +8,7 @@
         function confirmInsert(event) {
             event.preventDefault();
             swal.fire({
-                title: "Are you sure?",
+                title: "Are you sure to Insert?",
                 icon: "question",
                 showCancelButton: true
             }).then(result => {
@@ -17,7 +17,7 @@
                     registrationForm.submit();
                 }
                 else {
-                    swal("Your imaginary file is safe!");
+                    swal("Employee Information is not inserted");
                 }
             });
         }

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Serilog;
-using Microsoft.Extensions.Logging;
+
 using ListEmployees1;
 using Microsoft.AspNetCore.HttpLogging;
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +19,11 @@ builder.Services.AddHttpLogging(logging =>
     logging.CombineLogs = true;
 }
 );
+builder.Services.AddWebOptimizer(pipeline =>
+{
+    pipeline.MinifyCssFiles("css/**/*.css");
+    pipeline.AddCssBundle("/css/bundle.css", "css/**/*.css");
+});
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -46,7 +51,7 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
-
+app.UseWebOptimizer();
 app.UseHttpsRedirection();
 app.UseHttpLogging();
 app.UseStaticFiles();
