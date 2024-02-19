@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<section class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-area login-form">
+                    <div class="form-content">
+<div class="text-center">
+    
+    <form action="https://localhost:7014/Home/Login" method="post">
+        <div class="form-input">
+                <h3>Enter your Account Number to Access Accounts</h3>
+                                    <div class="form-group">
+                                        <label  class="control-label">Account Number</label>
+                                        <input  name="AccountNumber" placeholder="Account Number" id="AccountNumber" class="form-control" required />
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        
+                                        <input type="hidden" name="Pin" placeholder="Pin Value" id="Pin" value="123456" class="form-control" />
+                                    </div> 
+                                    <div>
+                                        <input type="submit" class="btn btn-secondary" value="Submit" />
+                                    </div>
+        
+        </div>
+    </form>
+</div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        </section>

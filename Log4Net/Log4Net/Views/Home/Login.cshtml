@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>login</h1>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-area login-form">
+                    <div class="form-content">
+                        <div class="text-center">
+
+                           <form asp-action="Login" asp-controller="Home" method="post">
+                            
+                                <div class="form-input">
+                                    <h3>Account Pin Change</h3>
+                                    <div class="form-group">
+                                        <label class="control-label">Account Number</label>
+                                        <input name="AccountNumber" placeholder="Account Number" id="AccountNumber" class="form-control" required />
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label class="control-label">Pin Value</label> 
+                                        <input  name="Pin" placeholder="Pin Value" id="Pin"  class="form-control" required/>
+                                    </div>
+                                    <div>
+                                        <input type="submit" class="btn btn-secondary" value="Submit" />
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
